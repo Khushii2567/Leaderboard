@@ -1,0 +1,39 @@
+.header {
+  text-align: center;
+  padding: 1rem;
+}
+
+.header h1 {
+  font-size: 4rem;
+  color: #d1e4e8;
+  font-weight: bold;
+  text-shadow: 0 0 10px #0077ff;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+border-radius: 35.7656px;
+left: calc(50% - 1081.31px/2 - 0.34px);
+top: 232.47px;
+}
+
+.search-bar input {
+  padding: 0.7rem 1rem;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  width: 40%;
+  background: linear-gradient(90deg, #642b73, #c6426e);
+  color: white;
+}
+
+.search-bar button {
+  padding: 0.7rem 1rem;
+  border-radius: 0 20px 20px 0;
+  border: none;
+  background: #6c63ff;
+  color: white;
+  cursor: pointer;
+}
+

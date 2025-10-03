@@ -1,0 +1,48 @@
+.buttons {
+  display: flex;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.buttons button {
+  background: white;
+  color: black;
+  padding: 1.75rem 1.8rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.buttons button:hover {
+  transform: scale(1.05);
+  background-color: #9f2a78 ;
+  color: white;
+}
+ 
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.faq-btn {
+  background: #ff6584;
+}
+
+.faq-btn:hover {
+  background: #e14a68;
+}
+
+.leaderboard-btn {
+  background: #42c2ff;
+}
+
+.leaderboard-btn:hover {
+  background: #2a9bd7;
+}
+
+ 

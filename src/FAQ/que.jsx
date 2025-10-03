@@ -22,7 +22,7 @@ const Que = () => {
         "No, once you’ve earned a badge on Google Cloud Skills Boost, it remains in your profile permanently. You can redo the labs for practice, but the badge will not be reissued. This makes it useful to track which skills you’ve already completed and which new ones you should target."
     },
     {
-      question: "WWhere can I view the badges I’ve earned?",
+      question: "Where can I view the badges I’ve earned?",
       answer:
         "All your earned badges are stored in your Google Cloud Skills Boost profile. You can access them anytime by logging in to your account. Additionally, you can share these badges on LinkedIn, in your resume, or in professional portfolios to showcase your achievements to potential employers."
     },

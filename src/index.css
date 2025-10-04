@@ -6,8 +6,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background: url('/assets/webPage.svg'); 
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: auto;
 }
 html, body {
   height: 100%;
@@ -15,7 +15,7 @@ html, body {
 }
 #root {
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
  
 /* Falling stars container */

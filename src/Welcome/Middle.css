@@ -8,12 +8,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -8.5rem;
+  margin-top: -3.5rem;
 }
 
 .middle p {
-  font-size: 4.5rem;
-  font-weight: 1000;
+  font-size: 3rem;
+  font-weight: 700;
   color: white;
   font-display: swap;
   text-shadow: 
@@ -35,14 +35,14 @@
   color: white;
   padding: 1.5rem 2.5rem;
   border-radius: 0.75rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   font-family: "Michroma", sans-serif;
 }
 
 .gcloud-box img {
-  height: 3rem;
+  height: 2rem;
 }
 
 

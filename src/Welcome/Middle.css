@@ -11,18 +11,18 @@
   margin-top: -3.5rem;
 }
 
-.middle p {
-  font-size: 3rem;
-  font-weight: 700;
-  color: white;
-  font-display: swap;
+  .middle p {
+  color: white; /* text color white */
+  font-family: 'Michroma', "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 80px;
   text-shadow: 
     0 0 7px rgb(38, 185, 243),   /* cyan glow */
-    0 0 11px rgb(66, 177, 232); /* brighter cyan glow */
-    -webkit-text-stroke: 4.2px #001f4d;
-    font-family: "Poppins", sans-serif;
-  font-style: normal;
-} 
+    0 0 11px rgb(66, 177, 232);  /* brighter cyan glow */
+  -webkit-text-stroke: 1px #001f4d; /* optional outline */
+}
+
 
 
 

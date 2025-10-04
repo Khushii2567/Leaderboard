@@ -71,4 +71,17 @@ html, body {
   z-index: 1; 
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
+/* Table container */
+.table-wrapper {
+  flex: 1; /* take remaining height */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}

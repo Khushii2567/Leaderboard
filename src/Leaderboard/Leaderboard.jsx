@@ -4,7 +4,7 @@ import Header from "./Header";
 import Badges from "./Badges"; 
 import Table from "./Table";
 import Search from "./Search"; 
-import Sidebar from "..//Leaderboard/Sidebar";
+import Footer from "./Footer";
 const Leaderboard = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -73,6 +73,7 @@ const Leaderboard = () => {
       <Search onSearch={handleSearch} />
       <Badges maxBadge={maxBadge} />
       <Table data={filteredData} />
+      <Footer />
     </div>
   );
 };

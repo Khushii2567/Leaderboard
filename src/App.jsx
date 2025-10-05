@@ -1,17 +1,53 @@
 import React, { useEffect, useState } from "react";
 import Papa from "papaparse";
-import Header from "./Leaderboard/Header"; 
-import Badges from "./Leaderboard/Badges"; 
+import Header from "./Leaderboard/Header";
+import Badges from "./Leaderboard/Badges";
 import Table from "./Leaderboard/Table";
-import Search from "./Leaderboard/Search"; 
-
+import Search from "./Leaderboard/Search";
 
 const Leaderboard = () => {
+  const [isMobile, setIsMobile] = useState(false);
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [maxBadge, setMaxBadge] = useState(0);
 
-  // Load CSV from public folder
+  // ✅ Device check logic inside the component
+  useEffect(() => {
+    const checkDevice = () => {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const mobile =
+        /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/.test(userAgent);
+      setIsMobile(mobile || window.innerWidth < 768);
+    };
+
+    checkDevice();
+    window.addEventListener("resize", checkDevice);
+
+    return () => window.removeEventListener("resize", checkDevice);
+  }, []);
+
+  // 🚫 Show message if mobile
+  if (isMobile) {
+    return (
+      <div
+        style={{
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          backgroundColor: "#111",
+          color: "white",
+          fontSize: "1.5rem",
+          padding: "2rem",
+        }}
+      >
+        🚫 This website is available only on desktop devices.
+      </div>
+    );
+  }
+
+  // ✅ CSV Loading
   useEffect(() => {
     fetch("/assets/leaderboard.csv")
       .then((res) => res.text())
@@ -24,7 +60,6 @@ const Leaderboard = () => {
               (row) => row["User Name"] && row["# of Skill Badges Completed"]
             );
 
-            // Sort by badges or score if available
             cleaned.sort(
               (a, b) =>
                 parseInt(b["# of Skill Badges Completed"] || 0) -
@@ -48,22 +83,20 @@ const Leaderboard = () => {
   }, []);
 
   const handleSearch = (query) => {
-  if (!query) {
-    setFilteredData(data);
-  } else {
-    setFilteredData(
-      data.filter((user) =>
-        user["User Name"]?.toLowerCase().includes(query.toLowerCase())
-      )
-    );
-  }
-};
+    if (!query) {
+      setFilteredData(data);
+    } else {
+      setFilteredData(
+        data.filter((user) =>
+          user["User Name"]?.toLowerCase().includes(query.toLowerCase())
+        )
+      );
+    }
+  };
 
   return (
     <div>
-      {/* <Sidebar/> */}
       <Header />
-      {/* Falling stars animation */}
       <div className="falling-stars">
         <div className="star"></div>
         <div className="star"></div>
@@ -74,9 +107,7 @@ const Leaderboard = () => {
       <Search onSearch={handleSearch} />
       <Badges maxBadge={maxBadge} />
       <Table data={filteredData} />
-      
     </div>
-    
   );
 };
 

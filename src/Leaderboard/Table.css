@@ -1,25 +1,16 @@
 /* Container */
 .leaderboard-container {
   margin: 50px auto;
+  width: 90%;            
+  max-width: 1200px;      
   padding: 20px;
   color: #fff;
   font-family: 'Inter', sans-serif;
   animation: fadeIn 1s ease-in-out;
-position: absolute;
-/* width: 1530px;
-height: 500px;
-left: 195px;
-top: 443px; */
-background: rgba(31, 0, 79, 0.9);
-border: 4px solid #FFFFFF;
-border-radius: 40px 40px 0px 0px;
-width: 1200px;
-top: 400px;
-left: 180px;
+  background: rgba(31, 0, 79, 0.9);
+  border: 4px solid #FFFFFF;
+  border-radius: 40px 40px 0px 0px;
 }
-
-
-
 
 /* Table */
 .leaderboard-table {
@@ -117,4 +108,31 @@ opacity: 0.9;
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =========================================== */
+/* RESPONSIVE STYLES                */
+/* =========================================== */
+
+@media (max-width: 600px) {
+  .leaderboard-container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
+
+  .leaderboard-table th {
+    font-size: 0.9rem;
+  }
 }

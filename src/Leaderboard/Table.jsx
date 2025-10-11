@@ -10,6 +10,7 @@ const Table = ({ data }) => {
 
       {data && data.length > 0 ? (
   <div className="table-scroll">
+   <div className="table-wrapper">
     <table className="leaderboard-table">
       <thead>
         <tr>
@@ -37,6 +38,7 @@ const Table = ({ data }) => {
         })}
       </tbody>
     </table>
+   </div>
   </div>
 ) : (
   <p className="loading-text">Loading leaderboard...</p>

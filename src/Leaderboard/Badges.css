@@ -19,3 +19,16 @@
 .badge.active {
   background: yellow;
 }
+
+
+@media (max-width: 600px) {
+  .badges-container {
+    gap: 1rem;       
+    margin: 2rem 0; 
+    flex-wrap: wrap; 
+  }
+
+  .badge {
+    padding: 0.6rem 1.2rem; 
+  }
+}

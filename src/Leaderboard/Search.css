@@ -34,3 +34,9 @@
 .search-bar button:hover {
   background: #5a52d5;
 }
+
+@media (max-width: 600px) {
+  .search-bar input {
+    width: 70%; 
+  }
+}

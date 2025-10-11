@@ -6,48 +6,11 @@ import Table from "./Leaderboard/Table";
 import Search from "./Leaderboard/Search";
 
 const Leaderboard = () => {
-  const [isMobile, setIsMobile] = useState(false);
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [maxBadge, setMaxBadge] = useState(0);
 
-  // ✅ Device check logic inside the component
-  useEffect(() => {
-    const checkDevice = () => {
-      const userAgent = navigator.userAgent.toLowerCase();
-      const mobile =
-        /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/.test(userAgent);
-      setIsMobile(mobile || window.innerWidth < 768);
-    };
 
-    checkDevice();
-    window.addEventListener("resize", checkDevice);
-
-    return () => window.removeEventListener("resize", checkDevice);
-  }, []);
-
-  // 🚫 Show message if mobile
-  if (isMobile) {
-    return (
-      <div
-        style={{
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          backgroundColor: "#111",
-          color: "white",
-          fontSize: "1.5rem",
-          padding: "2rem",
-        }}
-      >
-        🚫 This website is available only on desktop devices.
-      </div>
-    );
-  }
-
-  // ✅ CSV Loading
   useEffect(() => {
     fetch("/assets/leaderboard.csv")
       .then((res) => res.text())

@@ -136,3 +136,25 @@ opacity: 0.9;
     font-size: 0.9rem;
   }
 }
+
+/* Green tick style */
+.tick-mark {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #28a745; /* green circle */
+  position: relative;
+}
+
+.tick-mark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+}

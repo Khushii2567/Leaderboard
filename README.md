@@ -14,52 +14,44 @@ You need to have [Node.js](https://nodejs.org/) (version 18.x or newer) and a pa
 
 1.  **Clone the repository:**
     Open your terminal and run the following command to clone the project to your local machine. Replace `your-repository-url` with the actual URL of your Git repository.
-    ~~~
-    git clone https://github.com/Khushii2567/Leaderboard.git
-    ~~~
-    {: .language-bash}
+   ```bash
+    git clone [https://github.com/Khushii2567/Leaderboard.git](https://github.com/Khushii2567/Leaderboard.git)
+    ```
 
 2.  **Navigate to the project directory:**
-    ~~~
-    cd your-repository-name
-    ~~~
-    {: .language-bash}
+    ```bash
+    cd Leaderboard/
+    ```
 
 3.  **Install dependencies:**
     Use your preferred package manager to install the project's dependencies.
 
     * **Using npm:**
-        ~~~
+        ```bash
         npm install
-        ~~~
-        {: .language-bash}
+        ```
     * **Using yarn:**
-        ~~~
+        ```bash
         yarn install
-        ~~~
-        {: .language-bash}
+        ```
     * **Using pnpm:**
-        ~~~
+        ```bash
         pnpm install
-        ~~~
-        {: .language-bash}
+        ```
 
 4.  **Start the development server:**
     This command will start the Vite development server, typically on `http://localhost:5173`.
     * **Using npm:**
-        ~~~
+        ```bash
         npm run dev
-        ~~~
-        {: .language-bash}
+        ```
     * **Using yarn:**
-        ~~~
+        ```bash
         yarn dev
-        ~~~
-        {: .language-bash}
+        ```
     * **Using pnpm:**
-        ~~~
+        ```bash
         pnpm dev
-        ~~~
-        {: .language-bash}
+        ```
 
 The Application should start running locally on your Device.

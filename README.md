@@ -14,7 +14,7 @@ You need to have [Node.js](https://nodejs.org/) (version 18.x or newer) and a pa
 
 1.  **Clone the repository:**
     Open your terminal and run the following command to clone the project to your local machine. Replace `github-link-url` with the actual URL of your Git repository.
-   ```bash
+    ```bash
     git clone https://github.com/Khushii2567/Leaderboard.git
     ```
 

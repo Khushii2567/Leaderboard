@@ -4,9 +4,9 @@ import "./Badges.css";
 const Badges = ({ maxBadge }) => {
   return (
     <div className="badges-container">
-      <div className={`badge ${maxBadge >= 5 ? "active" : ""}`}>5 Badges</div>
-      <div className={`badge ${maxBadge >= 10 ? "active" : ""}`}>10 Badges</div>
-      <div className={`badge ${maxBadge >= 20 ? "active" : ""}`}>20 Badges</div>
+      <div className={`badge ${maxBadge >= 50 ? "active" : ""}`}>3 Tier</div>
+      <div className={`badge ${maxBadge >= 70 ? "active" : ""}`}>2 Tier</div>
+      <div className={`badge ${maxBadge >= 100 ? "active" : ""}`}>1 Tier</div>
     </div>
   );
 };

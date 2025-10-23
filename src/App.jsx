@@ -10,7 +10,6 @@ const Leaderboard = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [maxBadge, setMaxBadge] = useState(0);
 
-
   useEffect(() => {
     fetch("/assets/leaderboard.csv")
       .then((res) => res.text())
@@ -19,24 +18,32 @@ const Leaderboard = () => {
           header: true,
           skipEmptyLines: true,
           complete: (results) => {
-            const cleaned = results.data.filter(
-              (row) => row["User Name"] && row["# of Skill Badges Completed"]
+            
+            const processedData = results.data.map((row) => {
+              const skillBadges = parseInt(
+                row["# of Skill Badges Completed"] || 0
+              );
+              const arcadeGames = parseInt(
+                row["# of Arcade Games Completed"] || 0
+              );
+              const totalScore = skillBadges + arcadeGames;
+
+              return {
+                ...row,       // Keep original data
+                totalScore, // Calculate Toatal Score
+              };
+            });
+
+            const cleaned = processedData.filter(
+              (row) => row["User Name"] && row.totalScore > 0
             );
 
-            cleaned.sort(
-              (a, b) =>
-                parseInt(b["# of Skill Badges Completed"] || 0) -
-                parseInt(a["# of Skill Badges Completed"] || 0)
-            );
+            cleaned.sort((a, b) => b.totalScore - a.totalScore);
 
             setData(cleaned);
             setFilteredData(cleaned);
 
-            const max = Math.max(
-              ...cleaned.map((d) =>
-                parseInt(d["# of Skill Badges Completed"] || 0)
-              )
-            );
+            const max = cleaned.length > 0 ? cleaned[0].totalScore : 0;
             setMaxBadge(max);
           },
           error: (err) => console.error("CSV Parse Error:", err),
@@ -75,3 +82,4 @@ const Leaderboard = () => {
 };
 
 export default Leaderboard;
+

@@ -35,7 +35,7 @@ const Leaderboard = () => {
             });
 
             const cleaned = processedData.filter(
-              (row) => row["User Name"] && row.totalScore > 0
+              (row) => row["User Name"] && row.totalScore >= 0
             );
 
             cleaned.sort((a, b) => b.totalScore - a.totalScore);

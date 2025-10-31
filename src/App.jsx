@@ -29,8 +29,8 @@ const Leaderboard = () => {
               const totalScore = skillBadges + arcadeGames;
 
               return {
-                ...row,       // Keep original data
-                totalScore, // Calculate Toatal Score
+                ...row,
+                totalScore, 
               };
             });
 
@@ -43,8 +43,11 @@ const Leaderboard = () => {
             setData(cleaned);
             setFilteredData(cleaned);
 
-            const max = cleaned.length > 0 ? cleaned[0].totalScore : 0;
-            setMaxBadge(max);
+            const studentsWith20Badges = cleaned.filter(
+              (row) => row.totalScore === 20
+            ).length;
+            
+            setMaxBadge(studentsWith20Badges);
           },
           error: (err) => console.error("CSV Parse Error:", err),
         });

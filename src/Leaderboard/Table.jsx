@@ -1,8 +1,15 @@
 import React from "react";
 import "./Table.css";
 
+import { BsCheckCircleFill, BsXCircleFill } from "react-icons/bs";
+
 const Table = ({ data }) => {
-  const columns = ["User Name", "# of Skill Badges Completed", "Completion Status"];
+  const columns = [
+    "User Name",
+    "Skill Badges",
+    "Arcade Game",
+    "Completion Status",
+  ];
 
   return (
     <div className="leaderboard-container">
@@ -12,12 +19,8 @@ const Table = ({ data }) => {
             <table className="leaderboard-table">
               <thead>
                 <tr>
-                  {columns.map((key) => (
-                    <th key={key}>
-                      {key === "# of Skill Badges Completed"
-                        ? "Badges Earned"
-                        : key}
-                    </th>
+                  {columns.map((colName) => (
+                    <th key={colName}>{colName}</th>
                   ))}
                 </tr>
               </thead>
@@ -31,27 +34,67 @@ const Table = ({ data }) => {
                   const totalScore = row.totalScore || 0;
                   const isComplete = totalScore >= 20;
 
+                  const arcadeGamesCount = parseInt(
+                    row["# of Arcade Games Completed"] || 0
+                  );
+
                   return (
                     <tr key={index} className={rowClass}>
                       {columns.map((col, idx) => {
+                        if (col === "Skill Badges") {
+                          return (
+                            <td key={idx}>
+                              {row["# of Skill Badges Completed"]}
+                            </td>
+                          );
+                        }
+
+                        if (col === "Arcade Game") {
+                          return (
+                            <td key={idx}>
+                              {arcadeGamesCount === 1 ? (
+                                  <BsCheckCircleFill
+                                    style={{
+                                      color: "#00ff3cc9",
+                                      fontSize: "20px",
+                                      verticalAlign: "middle",
+                                    }}
+                                  />
+                              ) : (
+                                <BsXCircleFill
+                                  style={{
+                                    color: "#dc3545", 
+                                    fontSize: "20px",
+                                    verticalAlign: "middle",
+                                  }}
+                                />
+                              )}
+                            </td>
+                          );
+                        }
+
+                        if (col === "Total Score") {
+                          return <td key={idx}>{totalScore}</td>;
+                        }
+
                         if (col === "Completion Status") {
                           return (
                             <td key={idx}>
                               {isComplete ? (
-                                <span
-                                  style={{ color: "green", fontSize: "20px" }}
-                                >
-                                  ✅
+                                <span className="btn-donate">
+                                  <BsCheckCircleFill
+                                    style={{
+                                      color: "#00ff3cc9",
+                                      fontSize: "20px",
+                                      verticalAlign: "middle",
+                                    }}
+                                  />
                                 </span>
                               ) : (
                                 ""
                               )}
                             </td>
                           );
-                        }
-
-                        if (col === "# of Skill Badges Completed") {
-                          return <td key={idx}>{totalScore}</td>;
                         }
 
                         return <td key={idx}>{row[col]}</td>;
@@ -71,4 +114,5 @@ const Table = ({ data }) => {
 };
 
 export default Table;
+
 

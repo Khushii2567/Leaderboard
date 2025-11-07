@@ -15,7 +15,7 @@ You need to have [Node.js](https://nodejs.org/) (version 18.x or newer) and a pa
 1.  **Clone the repository:**
     Open your terminal and run the following command to clone the project to your local machine. Replace `github-link-url` with the actual URL of your Git repository.
     ```bash
-    git clone https://github.com/Khushii2567/Leaderboard.git
+    git clone https://github.com/shivjeet1/Leaderboard.git
     ```
 
 2.  **Navigate to the project directory:**
@@ -55,3 +55,25 @@ You need to have [Node.js](https://nodejs.org/) (version 18.x or newer) and a pa
         ```
 
 The Application should start running locally on your Device.
+
+## Using Docker to Containerize the Application
+
+1. Ensure you have Docker CLI installed.
+
+2. Follow same steps in [Installation Guide](#Installation)
+
+3. Build your Docker Image using Dockerfile:
+    ```bash
+    docker build -t leaderboard:latest .
+    ```
+
+4. Run your Docker Container:
+    ```bash
+    docker run -p 5173:5173 leaderboard:latest
+    ```
+
+5. Stop your Docker Container:
+    ```bash
+    docker stop CONTAINER_NAME
+    ```
+  - CONTAINER_NAME is the name of the container which can be found using 'docker ps' or 'docker ps -a'

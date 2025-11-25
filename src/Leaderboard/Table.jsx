@@ -2,6 +2,7 @@ import React from "react";
 import "./Table.css";
 
 import { BsCheckCircleFill, BsXCircleFill } from "react-icons/bs";
+import { TbNumber65Small } from "react-icons/tb";
 
 const Table = ({ data }) => {
   const columns = [
@@ -27,10 +28,8 @@ const Table = ({ data }) => {
               <tbody>
                 {data.map((row, index) => {
                   let rowClass = "";
-                  if (index === 0) rowClass = "first-place";
-                  else if (index === 1) rowClass = "second-place";
-                  else if (index === 2) rowClass = "third-place";
-
+                  rowClass = index <= 65 ? "first-place" : "";
+                  
                   const totalScore = row.totalScore || 0;
                   const isComplete = totalScore >= 20;
 

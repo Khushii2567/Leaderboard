@@ -5,7 +5,7 @@ const Badges = ({ maxBadge }) => {
   return (
     <div className="badges-container">
       <div className={`badge ${maxBadge >= 50 ? "active" : ""}`}>3 Tier</div>
-      <div className={`badge ${maxBadge >= 70 ? "active" : ""}`}>2 Tier</div>
+      <div className={`badge ${maxBadge >= 66 ? "active" : ""}`}>2 Tier</div>
       <div className={`badge ${maxBadge >= 100 ? "active" : ""}`}>1 Tier</div>
     </div>
   );

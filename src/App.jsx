@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Papa from "papaparse";
+import Footer from "./components/footer"
 import Header from "./Leaderboard/Header";
 import Badges from "./Leaderboard/Badges";
 import Table from "./Leaderboard/Table";
@@ -80,6 +81,7 @@ const Leaderboard = () => {
       <Search onSearch={handleSearch} />
       <Badges maxBadge={maxBadge} />
       <Table data={filteredData} />
+      <Footer/>
     </div>
   );
 };

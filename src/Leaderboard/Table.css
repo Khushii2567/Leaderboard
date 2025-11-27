@@ -1,21 +1,22 @@
 /* Container */
 .leaderboard-container {
   margin: 50px auto;
-  width: 90%;            
+  width: 100%;            
   max-width: 1200px;      
-  padding: 20px;
+  padding-bottom: 20px;
   color: #fff;
   font-family: 'Inter', sans-serif;
   animation: fadeIn 1s ease-in-out;
   background: rgba(31, 0, 79, 0.9);
   border: 4px solid #FFFFFF;
-  border-radius: 40px 40px 0px 0px;
+  border-radius: 30px;
 }
 
 /* Table */
 .leaderboard-table {
   width: 100%;
   border-collapse: collapse;
+  padding-bottom: 20px;
 }
 .table-scroll {
   max-height: 500px; 
@@ -23,6 +24,7 @@
   margin-top: 20px;
   border-radius: 10px;
   box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+  position: relative;
 }
 
 
@@ -30,8 +32,8 @@
 .leaderboard-table thead th {
   position: sticky;
   top: 0;
-  z-index: 20;
-  background: rgba(32, 0, 79, 0.842);
+  z-index: 70;
+  background: rgba(32, 0, 79, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding:5px;
@@ -66,7 +68,7 @@
   background: rgba(255, 255, 255, 0.392);
 }
 
-/* Top 3 */
+/* Top 2 */
 .first-place {
   background: linear-gradient(90deg, #86E4FD 0%, #F11EF4 53.85%, #5937EF 100%);
 opacity: 0.9;
@@ -119,10 +121,10 @@ opacity: 0.9;
 
 @media (max-width: 600px) {
   .leaderboard-container {
-    width: 95%;
-    margin: 20px auto;
+    width: 100%;
+    margin: auto;
     align-content: center;
-    padding: 10px;
+    padding-bottom: 15px;
   }
 
   .table-wrapper {
@@ -136,6 +138,9 @@ opacity: 0.9;
   }
 
   .leaderboard-table th {
+    position: sticky;
+    top: 0;
+    z-index: 70;
     font-size: 0.9rem;
     align-content: center;
   }
@@ -147,7 +152,7 @@ opacity: 0.9;
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: #28a745; /* green circle */
+  background-color: #28a745;
   position: relative;
 }
 

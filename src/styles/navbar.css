@@ -1,0 +1,281 @@
+/* ============================================================
+   Light mode + Dark mode (auto switched by .lb-theme--dark)
+   ============================================================ */
+:root {
+  --lb-bg: rgba(32, 0, 79, 0.842);
+  --lb-surface: #f8f9fa;
+  --lb-text: #007bee;
+  --lb-text-muted: #6b7280;
+  --lb-border: rgba(0,0,0,0.08);
+
+  --lb-primary: #573bf6a1;
+  --lb-primary-hover: #6025eb91;
+
+  --lb-nav-bg: var(--lb-bg);
+  --lb-btn-bg: rgba(0,0,0,0.04);
+  --lb-btn-bg-hover: rgba(0,0,0,0.08);
+  --lb-ghost-bg: transparent;
+}
+
+/* ============================================================
+   NAVBAR BASE
+   ============================================================ */
+.lb-nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+
+  background: var(--lb-nav-bg);
+  color: var(--lb-text);
+  border-bottom: 1px solid var(--lb-border);
+
+  backdrop-filter: blur(1000px);
+  -webkit-backdrop-filter: blur(1000px);
+
+  transition: background 0.25s ease, border-color 0.25s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+}
+
+.lb-nav__container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.65rem 1.2rem;
+}
+
+/* ============================================================
+   BRAND
+   ============================================================ */
+.lb-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--lb-text);
+
+  user-select: none;
+}
+
+.lb-brand__logo {
+  display: block;
+  color: var(--lb-primary);
+}
+
+/* ============================================================
+   NAV LINKS
+   ============================================================ */
+.lb-nav__links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.6rem;
+}
+
+.lb-nav__link {
+  text-decoration: none;
+  font-size: 0.96rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  color: var(--lb-text);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lb-nav__link:hover {
+  background: var(--lb-btn-bg-hover);
+}
+
+.lb-nav__link--active {
+  background: var(--lb-primary);
+  color: #fff;
+}
+
+/* ============================================================
+   NAV ACTIONS
+   ============================================================ */
+.lb-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+/* Input */
+.lb-nav__search {
+  padding: 0.40rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--lb-border);
+  background: var(--lb-surface);
+  color: var(--lb-text);
+
+  font-size: 0.92rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.lb-nav__search::placeholder {
+  color: var(--lb-text-muted);
+}
+
+/* Buttons */
+.lb-btn {
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: 1px solid var(--lb-border);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--lb-btn-bg);
+  color: var(--lb-text);
+
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+
+.lb-btn:hover {
+  background: var(--lb-btn-bg-hover);
+}
+
+.lb-btn:active {
+  transform: scale(0.97);
+}
+
+.lb-btn--primary {
+  background: var(--lb-primary);
+  border-color: var(--lb-primary);
+  color: #fff;
+}
+
+.lb-btn--primary:hover {
+  background: var(--lb-primary-hover);
+}
+
+/* Ghost button (Roadmap) */
+.lb-btn--ghost {
+  background: var(--lb-ghost-bg);
+  border-color: var(--lb-border);
+}
+
+/* Theme toggle icon button */
+.lb-btn--icon {
+  width: 38px;
+  height: 38px;
+  padding: 6px;
+}
+
+/* ============================================================
+   HAMBURGER (Mobile)
+   ============================================================ */
+.lb-nav__toggle {
+  display: none;
+  padding: 6px;
+  background: none;
+  color: #00d6fcf8;
+  border: none;
+  cursor: pointer;
+}
+
+.lb-nav__hamburger,
+.lb-nav__hamburger::before,
+.lb-nav__hamburger::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  content: "";
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.lb-nav__hamburger {
+  position: relative;
+}
+
+.lb-nav__hamburger::before {
+  position: absolute;
+  top: -6px;
+  left: 0;
+}
+
+.lb-nav__hamburger::after {
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+@media (max-width: 800px) {
+
+  .lb-nav__toggle {
+    display: inline-flex;
+  }
+
+  .lb-nav__menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+
+    background: var(--lb-nav-bg);
+    border-bottom: 1px solid var(--lb-border);
+
+    padding: 1rem;
+    gap: 1rem;
+
+    display: none;
+    flex-direction: column;
+
+    box-shadow: 0 10px 30px rgba(0, 183, 255, 0.589);
+  }
+
+  .lb-nav__menu.lb-open {
+    display: flex;
+  }
+
+  .lb-nav__links {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .lb-nav__actions {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .lb-nav__menu .lb-btn {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.65rem 0.75rem;
+    justify-content: center;
+    font-size: 0.98rem;
+  }
+
+  .lb-nav__links li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .lb-nav__links a.lb-nav__link,
+  .lb-nav__links a.lb-btn {
+    text-decoration: none;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

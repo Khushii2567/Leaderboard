@@ -1,0 +1,19 @@
+.app-footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.95rem;
+  color: var(--lb-text, #ccc);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 0rem;
+}
+
+.app-footer a {
+  color: var(--lb-primary, #62a0ff);
+  text-decoration: none;
+  vertical-align: bottom;
+  font-weight: 600;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}

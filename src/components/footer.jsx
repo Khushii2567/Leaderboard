@@ -15,11 +15,11 @@ export default function Footer() {
         </a>{" "}
         and{" "}
         <a
-          href="https://github.com/khushi2567"
+          href="https://github.com/khushii2567"
           target="_blank"
           rel="noopener noreferrer"
         >
-          khushi2567
+          khushii2567
         </a>
       </p>
     </footer>
